@@ -1,16 +1,15 @@
 <template>
-    <ul class="countries">
-        <slot>
-
-        </slot>
+    <ul class="cards">
+        <slot />
     </ul>
 </template>
 <script setup>
 
 
 </script>
-<style >
-.countries {
-    background-color: red;
+<style scoped>
+.cards {
+    display: inline-block;
+    padding-left: 78px;
 }
 </style>

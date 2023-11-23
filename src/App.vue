@@ -9,122 +9,137 @@
           name or region, and filter by criteria. Learn about the world and its diversity with Atlas!</p>
       </li>
       <li>
-        <button class="btn">filter</button>
+
+        <select class="btn">
+          <option value="1">filter region</option>
+          <option value="2">africa</option>
+          <option value="3">american</option>
+        </select>
       </li>
     </ul>
-
-
-
-    <hr>
     <section>
-      <ul class="cards">
-        <li class="card">
-          <!-- <li v-for="item in List" :key="item.id"> -->
-          <img class="flag" src="\atlas.assets\de.png">
-          <!-- {{ item.id }}-{{ item.title }} -->
+      <JCard>
+        <JFlag v-for="item in List" :key="item.id">
+          <img class="flag" :src="item.flag">
+          <template #title>{{ item.title }}</template>
+          <template #desc>{{ item.desc }} </template>
+          <!-- <ul class="cards"> -->
+          <!-- <li class="card"> -->
+          <!-- <li class="card" v-for="item in List" :key="item.id"> -->
+          <!-- <img class="flag" :src="item.flag" /> -->
+
+          <!-- <h3 class="country-name">Germany</h3>
+          <input name="check" id="check" type="checkbox">
+
+          <p class="card-content">Federal Republic of Germany is an independent country in Western Europe with an
+            estimated population of over
+            83 million people.</p>
           <div>
-            <h3 class="country-name">Germany</h3>
-            <p class="card-content">Federal Republic of Germany is an independent country in Western Europe with an
-              estimated population of over
-              83 million people.</p>
-            <input type="chekbox">
-          </div>
-          <div>
-            <button class="btn-2">Learn more</button>
-          </div>
-        </li>
-      </ul>
+            <button class="btn-2">
+              <span class="btn-cont"> Learn more</span>
+              <img class="icon" src="\atlas.assets\Icon (1).png">
+            </button>
+          </div> --> -->
+          <!-- {{ item.title }}-{{ item.id }}-{{ item.desc }} -->
+          <!-- </li> -->
+        </JFlag>
+      </JCard>
+      <!-- </ul> -->
     </section>
   </div>
 </template>
 <script setup>
-// import JCard from 'vue';
-// const List = [
-//   {
-//     id: nanoid(3),
-//     flag: 'public\atlas.assets\de.png',
-//     title: 'Germany',
-//     desc: 'Federal Republic of Germany is an independent country in Western Europe with an estimated population of over 83 million people.'
+import { nanoid } from 'nanoid';
+import JCard from '@/components/JCard.vue';
+import JFlag from '@/components/JFlag.vue'
+const List = [
+  {
+    id: nanoid(),
+    flag: '\atlas.assets\de.png',
+    title: 'Germany',
+    desc: 'Federal Republic of Germany is an independent country in Western Europe with an estimated population of over 83 million people.'
 
-//   },
-//   {
-//     id: nanoid(3),
-//     flag: 'public\atlas.assets\de.png',
-//     title: 'Paraguay',
-//     desc: 'Republic of Paraguay is an independent country in South America with an estimated population of over 7.1 million people'
-//   },
-//   {
-//     id: nanoid(3),
-//     flag: '',
-//     title: '',
-//     desc: ''
+  },
+  {
+    id: nanoid(3),
+    flag: '\atlas.assets\bf.png',
+    title: 'IRAN',
+    desc: ' is an independent country in Western Africa with an estimated population of over 20 million people.'
 
-//   },
-//   {
-//     id: nanoid(3),
-//     flag: '',
-//     title: '',
-//     desc: ''
+  },
+  {
+    id: nanoid(3),
+    flag: 'public\atlas.assets\pn.png',
+    title: 'Pitcairn Islands',
+    desc: 'Pitcairn Islands is a dependent territory in Polynesia with an estimated population of over 56 people.'
 
-//   },
-//   {
-//     id: nanoid(3),
-//     flag: '',
-//     title: '',
-//     desc: ''
+  },
+  {
+    id: nanoid(3),
+    flag: 'public\atlas.assets\de.png',
+    title: 'Paraguay',
+    desc: 'Republic of Paraguay is an independent country in South America with an estimated population of over 7.1 million people'
+  },
+  {
+    id: nanoid(3),
+    flag: 'public\atlas.assets\hk.png',
+    title: 'Hong Kong',
+    desc: 'Hong Kong Special Administrative Region of the Peoples Republic of China is a dependent territory in Eastern Asia  an estimated population of over 7.5 million people.'
 
-//   },
-//   {
-//     id: nanoid(3),
-//     flag: '',
-//     title: '',
-//     desc: ''
+  },
 
-//   },
-//   {
-//     id: nanoid(3),
-//     flag: '',
-//     title: '',
-//     desc: ''
+  {
+    id: nanoid(3),
+    flag: 'public\atlas.assets\bg.png',
+    title: 'Bulgaria',
+    desc: 'Republic of Bulgaria is an independent country in Southeast Europe with an estimated population of over 6.9 million people.'
 
-//   },
-//   {
-//     id: nanoid(3),
-//     flag: '',
-//     title: '',
-//     desc: ''
+  },
+  {
+    id: nanoid(3),
+    flag: 'public\atlas.assets\bf.png',
+    title: 'Antigua and Barbuda',
+    desc: 'Antigua and Barbuda is an independent country in Caribbean with an estimated population of over 97 thousand people.'
 
-//   },
-//   {
-//     id: nanoid(3),
-//     flag: '',
-//     title: '',
-//     desc: ''
+  },
+  {
+    id: nanoid(3),
+    flag: 'public\atlas.assets\ae.png',
+    title: 'United Arab Emirates',
+    desc: 'United Arab Emirates is an independent country in Western Asia with an estimated population of over 9.8 million people.'
 
-//   },
-//   {
-//     id: nanoid(3),
-//     flag: '',
-//     title: '',
-//     desc: ''
+  },
+  {
+    id: nanoid(3),
+    flag: 'public\atlas.assets\dj.png',
+    title: 'Djibouti',
+    desc: 'Republic of Djibouti is an independent country in Eastern Africa with an estimated population of over 9.8 thousand people.'
 
-//   },
-//   {
-//     id: nanoid(3),
-//     flag: '',
-//     title: '',
-//     desc: ''
+  },
+  {
+    id: nanoid(3),
+    flag: 'public\atlas.assets\in.png',
+    title: 'India',
+    desc: 'Republic of India is an independent country in Southern Asia with an estimated population of over 1.3 billion people.'
 
-//   },
-//   {
-//     id: nanoid(3),
-//     flag: '',
-//     title: '',
-//     desc: ''
+  },
 
-//   },
+  {
+    id: nanoid(3),
+    flag: 'public\atlas.assets\km.png',
+    title: 'Comoros',
+    desc: 'Union of the Comoros is an independent country in Eastern Africa with an estimated population of over 8.6 thousand people.'
 
-// ]
+  },
+  {
+    id: nanoid(3),
+    flag: 'public\atlas.assets\la.png',
+    title: 'Laos',
+    desc: 'Lao Peoples Democratic Republic is an independent country in South - Eastern Asia with an estimated population of over 7.2 million people.'
+
+  },
+
+]
 
 </script>
 <style scoped>
@@ -182,23 +197,35 @@
   display: inline-block;
   margin-top: 10px;
   margin-left: 332px;
+  text-align: left;
+
 }
 
-.card {
-  /* width: 307.5px;
-  height: 412px; */
+/* 
+.cards {
+  display: inline-block;
+  padding-left: 78px;
+} */
+
+/* .card {
+  width: 307.5px;
+  height: 412px;
   padding: 20px;
   border-radius: 10px;
   border: 1px;
   gap: 10px;
   background-color: rgba(255, 255, 255, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.5)
-}
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  margin-left: 30px;
+  margin-bottom: 30px;
 
-.flag {
+} */
+
+/* .flag {
   width: 267.5px;
   height: 150px;
-  border: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.5)
 }
 
 .country-name {
@@ -208,6 +235,7 @@
   line-height: 24px;
   letter-spacing: 0em;
   text-align: left;
+  margin-top: 20px;
 
 
 }
@@ -219,14 +247,58 @@
   line-height: 20px;
   letter-spacing: 0em;
   text-align: left;
+  margin-bottom: 20px;
 }
 
 .btn-2 {
   width: 136px;
   height: 36px;
-  padding: 8px, 16px, 8px, 16px;
+  padding: 8px 16px 8px 16px;
   border-radius: 8px;
   border: 1px;
   gap: 8px;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(0, 0, 0, 1);
+
+
 }
+
+
+.description {
+  width: 267.5px;
+  height: 166px;
+  padding: 10px, 0px, 10px, 0px;
+  gap: 10px;
+} */
+/* .icon {
+  width: 20px;
+  height: 20px;
+  margin-bottom: -5px;
+  margin-right: -8px;
+}
+
+.btn-cont {
+  margin-top: 8px;
+  margin-left: 16px;
+  margin-bottom: 8px;
+  margin-right: 8px;
+
+
+}
+
+input {
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  border-radius: 36px;
+  border: 1px;
+  margin-left: 230px;
+  margin-top: -30px;
+
+} */
 </style>
