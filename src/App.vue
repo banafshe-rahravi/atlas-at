@@ -26,7 +26,7 @@
           <!-- <ul class="cards"> -->
           <!-- <li class="card"> -->
           <!-- <li class="card" v-for="item in List" :key="item.id"> -->
-          <!-- <img class="flag" :src="item.flag" /> -->
+          <!-- <img class="flag" src="/atlas.assets/de.png"> -->
 
           <!-- <h3 class="country-name">Germany</h3>
           <input name="check" id="check" type="checkbox">
@@ -39,7 +39,7 @@
               <span class="btn-cont"> Learn more</span>
               <img class="icon" src="\atlas.assets\Icon (1).png">
             </button>
-          </div> --> -->
+          </div> -->
           <!-- {{ item.title }}-{{ item.id }}-{{ item.desc }} -->
           <!-- </li> -->
         </JFlag>
@@ -54,35 +54,35 @@ import JCard from '@/components/JCard.vue';
 import JFlag from '@/components/JFlag.vue'
 const List = [
   {
-    id: nanoid(),
-    flag: '\atlas.assets\de.png',
+    id: nanoid(3),
+    flag: 'public/atlas.assets/de.png',
     title: 'Germany',
     desc: 'Federal Republic of Germany is an independent country in Western Europe with an estimated population of over 83 million people.'
 
   },
   {
     id: nanoid(3),
-    flag: '\atlas.assets\bf.png',
+    flag: 'public/atlas.assets/bf.png',
     title: 'IRAN',
     desc: ' is an independent country in Western Africa with an estimated population of over 20 million people.'
 
   },
   {
     id: nanoid(3),
-    flag: 'public\atlas.assets\pn.png',
+    flag: 'public/atlas.assets/pn.png',
     title: 'Pitcairn Islands',
     desc: 'Pitcairn Islands is a dependent territory in Polynesia with an estimated population of over 56 people.'
 
   },
   {
     id: nanoid(3),
-    flag: 'public\atlas.assets\de.png',
+    flag: 'public/atlas.assets/de.png',
     title: 'Paraguay',
     desc: 'Republic of Paraguay is an independent country in South America with an estimated population of over 7.1 million people'
   },
   {
     id: nanoid(3),
-    flag: 'public\atlas.assets\hk.png',
+    flag: 'public/atlas.assets/hk.png',
     title: 'Hong Kong',
     desc: 'Hong Kong Special Administrative Region of the Peoples Republic of China is a dependent territory in Eastern Asia  an estimated population of over 7.5 million people.'
 
@@ -90,35 +90,35 @@ const List = [
 
   {
     id: nanoid(3),
-    flag: 'public\atlas.assets\bg.png',
+    flag: 'public/atlas.assets/bg.png',
     title: 'Bulgaria',
     desc: 'Republic of Bulgaria is an independent country in Southeast Europe with an estimated population of over 6.9 million people.'
 
   },
   {
     id: nanoid(3),
-    flag: 'public\atlas.assets\bf.png',
+    flag: 'public/atlas.assets/bf.png',
     title: 'Antigua and Barbuda',
     desc: 'Antigua and Barbuda is an independent country in Caribbean with an estimated population of over 97 thousand people.'
 
   },
   {
     id: nanoid(3),
-    flag: 'public\atlas.assets\ae.png',
+    flag: 'public/atlas.assets/ae.png',
     title: 'United Arab Emirates',
     desc: 'United Arab Emirates is an independent country in Western Asia with an estimated population of over 9.8 million people.'
 
   },
   {
     id: nanoid(3),
-    flag: 'public\atlas.assets\dj.png',
+    flag: 'public/atlas.assets/dj.png',
     title: 'Djibouti',
     desc: 'Republic of Djibouti is an independent country in Eastern Africa with an estimated population of over 9.8 thousand people.'
 
   },
   {
     id: nanoid(3),
-    flag: 'public\atlas.assets\in.png',
+    flag: 'public/atlas.assets/in.png',
     title: 'India',
     desc: 'Republic of India is an independent country in Southern Asia with an estimated population of over 1.3 billion people.'
 
@@ -126,14 +126,14 @@ const List = [
 
   {
     id: nanoid(3),
-    flag: 'public\atlas.assets\km.png',
+    flag: 'public/atlas.assets/km.png',
     title: 'Comoros',
     desc: 'Union of the Comoros is an independent country in Eastern Africa with an estimated population of over 8.6 thousand people.'
 
   },
   {
     id: nanoid(3),
-    flag: 'public\atlas.assets\la.png',
+    flag: 'public/atlas.assets/la.png',
     title: 'Laos',
     desc: 'Lao Peoples Democratic Republic is an independent country in South - Eastern Asia with an estimated population of over 7.2 million people.'
 
@@ -148,6 +148,7 @@ const List = [
   height: 1620px;
   background-color: rgba(167, 179, 199, 1);
   padding-top: 20px;
+  margin: auto;
 
 }
 
@@ -201,16 +202,15 @@ const List = [
 
 }
 
-/* 
-.cards {
+
+/* .cards {
   display: inline-block;
   padding-left: 78px;
 } */
 
-/* .card {
+.card {
   width: 307.5px;
   height: 412px;
-  padding: 20px;
   border-radius: 10px;
   border: 1px;
   gap: 10px;
@@ -219,28 +219,28 @@ const List = [
   display: inline-block;
   margin-left: 30px;
   margin-bottom: 30px;
-
-} */
-
-/* .flag {
-  width: 267.5px;
-  height: 150px;
-  border: 1px solid rgba(255, 255, 255, 0.5)
+  padding: 20px;
 }
 
-.country-name {
+.flag {
+  width: 267.5px;
+  height: 150px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  margin-bottom: 26px;
+}
+
+.title {
   font-family: Inter;
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   letter-spacing: 0em;
   text-align: left;
-  margin-top: 20px;
 
 
 }
 
-.card-content {
+/* .desc {
   font-family: Inter;
   font-size: 14px;
   font-weight: 400;
@@ -248,9 +248,9 @@ const List = [
   letter-spacing: 0em;
   text-align: left;
   margin-bottom: 20px;
-}
+} */
 
-.btn-2 {
+/* .btn-2 {
   width: 136px;
   height: 36px;
   padding: 8px 16px 8px 16px;
@@ -264,9 +264,11 @@ const List = [
   letter-spacing: 0em;
   text-align: left;
   color: rgba(0, 0, 0, 1);
+  margin-top: 20px;
 
 
-}
+
+} */
 
 
 .description {
@@ -274,7 +276,8 @@ const List = [
   height: 166px;
   padding: 10px, 0px, 10px, 0px;
   gap: 10px;
-} */
+}
+
 /* .icon {
   width: 20px;
   height: 20px;
@@ -283,22 +286,28 @@ const List = [
 }
 
 .btn-cont {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
   margin-top: 8px;
   margin-left: 16px;
   margin-bottom: 8px;
   margin-right: 8px;
 
 
-}
+} */
 
-input {
+/* input {
   width: 36px;
   height: 36px;
   padding: 8px;
   border-radius: 36px;
   border: 1px;
   margin-left: 230px;
-  margin-top: -30px;
+ 
 
 } */
 </style>

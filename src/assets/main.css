@@ -42,4 +42,14 @@ body {
   /* background-color: rgba(167, 179, 199, 1); */
   font-family: inter;
   direction: ltr;
+
+}
+
+.container {
+  width: 1536px;
+  height: 1620px;
+  background-color: rgba(167, 179, 199, 1);
+  padding-top: 20px;
+  margin: auto;
+
 }
